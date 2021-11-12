@@ -50,7 +50,7 @@ cmake \
 	-DWITH_ASF=ON \
 	-DWITH_MP4=ON \
 	-DLIB_INSTALL_DIR:PATH=/usr/lib/x86_64-linux-gnu \
-	-DCMAKE_INSTALL_LIBDIR=lib/aarch64-linux-gnu ..
+	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
 
 make
 
