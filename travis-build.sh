@@ -45,13 +45,7 @@ mkdir -p taglib/build && cd taglib/build
 
 cmake \
 	-DCMAKE_INSTALL_PREFIX=/usr \
-	-DCMAKE_BUILD_TYPE=Release \
-	-DCMAKE_INSTALL_SYSCONFDIR=/etc \
-	-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
-	-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON \
-	-DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" \
-	-DCMAKE_VERBOSE_MAKEFILE=ON \
-	-DCMAKE_INSTALL_LIBDIR=lib/x86_64-linux-gnu ..
+	-DBUILD_SHARED_LIBS=ON
 
 make
 
@@ -79,7 +73,7 @@ checkinstall -D -y \
 	--pkggroup=lib \
 	--pkgsource=taglib \
 	--pakdir=../.. \
-	--maintainer="Uri Herrera <uri_herrera@nxos.org>" \
+	--maintainer=uri_herrera@nxos.org \
 	--provides=taglib \
 	--requires=libc6,libgcc-s1,libicu66,libstdc++6,zlib1g \
 	--nodoc \
