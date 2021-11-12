@@ -45,7 +45,7 @@ mkdir -p taglib/build && cd taglib/build
 
 cmake \
 	-DCMAKE_INSTALL_PREFIX=/usr \
-	-DBUILD_SHARED_LIBS=ON
+	-DBUILD_SHARED_LIBS=ON ..
 
 make
 
