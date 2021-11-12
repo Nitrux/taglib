@@ -27,7 +27,11 @@ DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 DEBIAN_FRONTEND=noninteractive apt -qq -yy install --no-install-recommends \
 	zlib1g-dev \
 	libboost-dev \
-	libicu-dev
+	libicu-dev \
+	pkg-kde-tools \
+	doxygen \
+	graphviz \
+	gsfonts-x11
 
 ### Clone repo.
 
@@ -41,12 +45,9 @@ mkdir -p taglib/build && cd taglib/build
 
 cmake \
 	-DCMAKE_INSTALL_PREFIX=/usr \
-	-DENABLE_BSYMBOLICFUNCTIONS=OFF \
-	-DQUICK_COMPILER=ON \
 	-DCMAKE_BUILD_TYPE=Release \
 	-DCMAKE_INSTALL_SYSCONFDIR=/etc \
 	-DCMAKE_INSTALL_LOCALSTATEDIR=/var \
-	-DCMAKE_EXPORT_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_FIND_PACKAGE_NO_PACKAGE_REGISTRY=ON \
 	-DCMAKE_INSTALL_RUNSTATEDIR=/run "-GUnix Makefiles" \
 	-DCMAKE_VERBOSE_MAKEFILE=ON \
@@ -60,7 +61,7 @@ make
 >> description-pak printf "%s\n" \
 	'audio meta-data library.' \
 	'' \
-	'TagLib is a library for reading and editing audio meta data, commonly know as tags..' \
+	'TagLib is a library for reading and editing audio meta data, commonly know as tags.' \
 	'' \
 	'This package contains the development headers and runtime package for programs for.' \
 	'the TagLib Audio Meta-Data Library.' \
@@ -80,7 +81,7 @@ checkinstall -D -y \
 	--pakdir=../.. \
 	--maintainer="Uri Herrera <uri_herrera@nxos.org>" \
 	--provides=taglib \
-	--requires="libc6,libgcc-s1,libicu67,libstdc++6,zlib1g" \
+	--requires=libc6,libgcc-s1,libicu66,libstdc++6,zlib1g \
 	--nodoc \
 	--strip=no \
 	--stripso=yes \
