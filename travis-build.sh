@@ -71,7 +71,7 @@ checkinstall -D -y \
 	--install=no \
 	--fstrans=yes \
 	--pkgname=taglib \
-	--pkgversion=2.1.0 \
+	--pkgversion=1.12.0 \
 	--pkgarch=amd64 \
 	--pkgrelease="1" \
 	--pkglicense=LGPL-1 \
