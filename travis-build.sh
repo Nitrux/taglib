@@ -45,7 +45,11 @@ mkdir -p taglib/build && cd taglib/build
 
 cmake \
 	-DCMAKE_INSTALL_PREFIX=/usr \
-	-DBUILD_SHARED_LIBS=ON ..
+	-DBUILD_SHARED_LIBS=ON \
+	-DCMAKE_USE_RELATIVE_PATHS=ON \
+	-DWITH_ASF=ON \
+	-DWITH_MP4=ON \
+	-DLIB_INSTALL_DIR:PATH=/usr/lib/x86_64-linux-gnu ..
 
 make
 
