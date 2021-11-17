@@ -9,8 +9,7 @@ script:
 
 branches:
   only:
-    - main
+    - pkgresolv
 
 notifications:
   email: false
-  

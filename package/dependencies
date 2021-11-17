@@ -1,0 +1,6 @@
+# Comments start with a '#'.
+# Empty lines are ignored.
+
+#    = Dependency =
+
+taglib
