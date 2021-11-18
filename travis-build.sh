@@ -11,11 +11,11 @@ git_commit=$(git rev-parse --short HEAD)
 	"Priority: optional" \
 	"Homepage: https://nxos.org" \
 	"Package: taglib-compat" \
-	"Version: 0.0.3-$git_commit" \
+	"Version: 0.0.4-$git_commit" \
 	"Maintainer: Uri Herrera <uri_herrera@nxos.org>" \
 	"Depends: $deps" \
 	"Replaces: libtag1v5, libtag1v5-vanilla, libtag1-dev" \
-	"Provides: libtag1v5, libtag1v5-vanilla, libtag1-dev" \
+	"Provides: libtag1v5 (=1.12.0), libtag1v5-vanilla(=1.12.0), libtag1-dev (=1.12.0)" \
 	"Architecture: amd64" \
 	"Description: Transitional package for taglib."
 
